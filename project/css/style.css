@@ -1,0 +1,16 @@
+body {
+    color: #003144;
+}
+#banner-principal {
+    height: 100vh;
+    max-width: 400px;
+}
+.btn {
+    background-color: transparent;
+    border: solid rgba(34, 168, 80, 1) 2px;
+    color: rgba(34, 168, 80, 1);
+}
+.form-control:focus {
+    border-color: rgba(34, 168, 80, 1);
+    box-shadow: 0 0 0 0.2rem rgba(34, 168, 80, 0.25);
+}

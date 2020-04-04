@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Cromai vaga desenvolvedor web</title>
+</head>
+<body>
+    <section id="banner-principal" class="container d-flex flex-column justify-content-center">
+        <div class="d-flex justify-content-center">
+            <h1>Calculadora</h1>
+        </div>
+        <form>
+            <div class="form-group d-flex flex-column justify-content-between">
+                <label>Cateto oposto</label>
+                <input type="number" class="form-control" name="cat_op">
+            </div>
+            <div class="form-group d-flex flex-column justify-content-between">
+                <label>Cateto adjacente</label>
+                <input type="number" class="form-control" name="cat_adj">
+            </div>
+        </form>
+        <button class="btn" onclick="calcularHipotenusa();"><i class="fa fa-calculator" aria-hidden="true"></i> Calcular</button>
+    </section>
+    <script src="https://use.fontawesome.com/60f53529f3.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
