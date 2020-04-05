@@ -1,4 +1,4 @@
-# cromai-vaga-desenvolvedor-web
+# Cromai vaga desenvolvedor web
 Repositório dedicado a teste para vaga desenvolvedor web cromai
 
 ## Tecnologias utilizadas:
