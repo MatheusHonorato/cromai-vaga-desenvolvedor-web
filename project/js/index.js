@@ -1,10 +1,18 @@
+function setFocusInicial() {
+
+    const cat_op = document.querySelector("input[name='cat_op']");
+    cat_op.focus();
+
+}
+
 function calcularHipotenusa() {
-    let cat_op = document.querySelector("input[name='cat_op']");
-    let cat_adj = document.querySelector("input[name='cat_adj']");
+
+    const cat_op = document.querySelector("input[name='cat_op']");
+    const cat_adj = document.querySelector("input[name='cat_adj']");
     let cor_original_borda = "#ced4da";
 
     let validate = document.querySelector(".validate");
-        
+    
     if(validate != null) {
         validate.remove();
     }
@@ -24,41 +32,37 @@ function calcularHipotenusa() {
 
 function validarCampos(cat_op, cat_adj) {
 
+    if(cat_op.value === "") {
+        setMensagem(cat_op);
+        return false;
+    } 
+
+    if(cat_adj.value === "") {
+        setMensagem(cat_adj);
+        return false;
+    } 
+
+    return true;
+}
+
+function setMensagem(cateto) {
+
     let backgroundColorDanger = "rgb(248, 215, 218)";
     let boxShadowDanger = "0 0 0 0.2rem rgba(248, 215, 218, 0.25)";
     let colorDanger = "#bd2130";
     let mensagemDeErroRequired = "Por favor preencha o campo.";
     let validate = null;
 
-    if(cat_op.value === "") {
-        cat_op.style.borderColor = backgroundColorDanger;
-        cat_op.style.boxShadow = boxShadowDanger;
+    cateto.style.borderColor = backgroundColorDanger;
+    cateto.style.boxShadow = boxShadowDanger;
 
-        validate = document.createElement("span"); 
-        validate.className = "validate";
-        validate.style.color = colorDanger; 
-        
-        validate.innerHTML = mensagemDeErroRequired;
-        cat_op.after(validate);
-
-        return false;
-    } 
-
-    if(cat_adj.value === "") {
-        cat_adj.style.borderColor = backgroundColorDanger;
-        cat_adj.style.boxShadow = boxShadowDanger;
+    validate = document.createElement("span"); 
+    validate.className = "validate";
+    validate.style.color = colorDanger; 
     
-        validate = document.createElement("span"); 
-        validate.className = "validate";
-        validate.style.color = colorDanger;
-        
-        validate.innerHTML = mensagemDeErroRequired;
-        cat_adj.after(validate);
-
-        return false;
-    } 
-
-    return true;
+    validate.innerHTML = mensagemDeErroRequired;
+    cateto.after(validate);
+    cateto.focus();
 }
 
 function enviarRequisicao(cat_op, cat_adj) {
@@ -84,6 +88,7 @@ function enviarRequisicao(cat_op, cat_adj) {
     xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
     xhr.onload = function () {
+
         let result = JSON.parse(xhr.responseText);
         if (xhr.readyState == 4 && xhr.status == "200") {
 
@@ -96,5 +101,6 @@ function enviarRequisicao(cat_op, cat_adj) {
 
         form.appendChild(hipotenusa);
     }
+
     xhr.send(json);
 }

@@ -10,7 +10,11 @@ body {
     border: solid rgba(34, 168, 80, 1) 2px;
     color: rgba(34, 168, 80, 1);
 }
-.form-control:focus {
+.form-control:focus, .btn:focus {
     border-color: rgba(34, 168, 80, 1);
     box-shadow: 0 0 0 0.2rem rgba(34, 168, 80, 0.25);
+}
+.btn:hover {
+    color: #fff;
+    background-color: rgba(34, 168, 80, 1);
 }
