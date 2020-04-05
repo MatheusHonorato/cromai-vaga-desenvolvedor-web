@@ -88,7 +88,10 @@ function enviarRequisicao(cat_op, cat_adj) {
             form.appendChild(hipotenusa);
 
         } else {
-            console.error(result);
+
+            hipotenusa.innerHTML = "Caro viajante do tempo nossa api está enfrentando problemas tente mais tarde.";
+            form.appendChild(hipotenusa);
+
         }
     }
     xhr.send(json);
