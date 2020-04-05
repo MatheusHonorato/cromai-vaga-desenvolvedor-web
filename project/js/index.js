@@ -3,20 +3,23 @@ function calcularHipotenusa() {
     let cat_adj = document.querySelector("input[name='cat_adj']");
     let cor_original_borda = "#ced4da";
 
+    let validate = document.querySelector(".validate");
+        
+    if(validate != null) {
+        validate.remove();
+    }
+
+    cat_op.style.borderColor = cor_original_borda;
+    cat_op.style.boxShadow = "none";
+    cat_adj.style.borderColor = cor_original_borda;
+    cat_adj.style.boxShadow = "none";
+
     let validacao = validarCampos(cat_op, cat_adj);
 
     if(validacao == true) {
-
-        let validate = document.querySelector(".validate");
-        if(validate != null) {
-            validate.remove();
-        }
-        cat_op.style.borderColor = cor_original_borda;
-        cat_op.style.boxShadow = "none";
-        cat_adj.style.borderColor = cor_original_borda;
-        cat_adj.style.boxShadow = "none";
         enviarRequisicao(cat_op.value, cat_adj.value);
-    }
+    } 
+
 }
 
 function validarCampos(cat_op, cat_adj) {
@@ -85,14 +88,13 @@ function enviarRequisicao(cat_op, cat_adj) {
         if (xhr.readyState == 4 && xhr.status == "200") {
 
             hipotenusa.innerHTML = "Hipotenusa: "+result.hip;
-            form.appendChild(hipotenusa);
 
         } else {
 
             hipotenusa.innerHTML = "Caro viajante do tempo nossa api está enfrentando problemas tente mais tarde.";
-            form.appendChild(hipotenusa);
-
         }
+
+        form.appendChild(hipotenusa);
     }
     xhr.send(json);
 }
