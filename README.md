@@ -8,4 +8,4 @@ Acesse em: https://matheushonorato.github.io/cromai-vaga-desenvolvedor-web/
 - CSS3
 - Javascript
 - Bootstrap 4
-- XhttpRequest
+- XMLHttpRequest
