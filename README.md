@@ -1,7 +1,7 @@
 # Cromai vaga desenvolvedor web
 Repositório dedicado a teste para vaga desenvolvedor web cromai
 
-<img src="https://raw.githubusercontent.com/MatheusHonorato/cromai-vaga-desenvolvedor-web/master/screenshot.png" width="400">
+<img src="https://raw.githubusercontent.com/MatheusHonorato/cromai-vaga-desenvolvedor-web/master/screenshot.png" width="100%">
 
 Acesse em: https://matheushonorato.github.io/cromai-vaga-desenvolvedor-web/
 
